@@ -27,6 +27,7 @@
     "tap": "^10.2.0"
   },
   "keywords": [
+    "logr",
     "log",
     "debug",
     "logger"
