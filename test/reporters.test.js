@@ -26,14 +26,15 @@ test('reporter - use env var to enable reporters', (t) => {
   process.env.LOGR = 'console,flat';
   const logs = [];
   const log = logrAll({
+    initLog: false,
     logger(msg) {
       logs.push(msg);
     },
   });
   log({ value: 'hi' });
-  t.equal(logs.length, 4);
-  t.match(logs[2], '\u001b[39m\u001b[90mvalue:\u001b[39m\u001b[37mhi\u001b[39m');
-  t.match(logs[3], '\u001b[1mvalue\u001b[22m\u001b[36m: \u001b[39m\u001b[36m"\u001b[39m\u001b[32mhi\u001b[39m\u001b[36m"\u001b[39m');
+  t.equal(logs.length, 2);
+  t.match(logs[0], '\u001b[90mvalue:\u001b[39m\u001b[37mhi\u001b[39m ');
+  t.match(logs[1], '\u001b[1mvalue\u001b[22m\u001b[36m: \u001b[39m\u001b[36m"\u001b[39m\u001b[32mhi\u001b[39m\u001b[36m"\u001b[39m');
   t.end();
 });
 

@@ -15,6 +15,7 @@ module.exports = (overrides) => {
     flat: {
       reporter: require('logr-flat'),
       options: {
+        timestamp: false,
         appColor: color,
         enabled: enabledReporters.includes('flat')
       }
@@ -39,6 +40,7 @@ module.exports = (overrides) => {
         environment: process.env.NODE_ENV || 'development',
         enabled: process.env.SENTRY_DSN !== undefined,
         dsn: process.env.SENTRY_DSN,
+        logger: process.env.SENTRY_LOGGER ? process.env.SENTRY_LOGGER : 'logr',
         filter: process.env.LOGR_SENTRY_FILTER ? process.env.LOGR_SENTRY_FILTER.split(',') : ['error']
       }
     },
@@ -47,6 +49,7 @@ module.exports = (overrides) => {
       options: {
         enabled: process.env.SLACK_HOOK !== undefined,
         slackHook: process.env.SLACK_HOOK,
+        username: process.env.SLACK_USERNAME ? process.env.SLACK_USERNAME : 'logr',
         filter: process.env.LOGR_SLACK_FILTER ? process.env.LOGR_SLACK_FILTER.split(',') : ['error']
       }
     },
