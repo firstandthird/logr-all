@@ -49,6 +49,7 @@ module.exports = (overrides) => {
       options: {
         enabled: process.env.SLACK_HOOK !== undefined,
         slackHook: process.env.SLACK_HOOK,
+        channel: process.env.SLACK_CHANNEL,
         username: process.env.SLACK_USERNAME ? process.env.SLACK_USERNAME : 'logr',
         filter: process.env.LOGR_SLACK_FILTER ? process.env.LOGR_SLACK_FILTER.split(',') : ['error']
       }
