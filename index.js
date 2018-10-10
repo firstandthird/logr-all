@@ -38,7 +38,7 @@ module.exports = (overrides) => {
       reporter: require('logr-sentry'),
       options: {
         environment: process.env.NODE_ENV || 'development',
-        enabled: process.env.SENTRY_DSN !== undefined,
+        enabled: process.env.SENTRY_DSN ? true : false,
         dsn: process.env.SENTRY_DSN,
         logger: process.env.SENTRY_LOGGER ? process.env.SENTRY_LOGGER : 'logr',
         filter: process.env.LOGR_SENTRY_FILTER ? process.env.LOGR_SENTRY_FILTER.split(',') : ['error']
@@ -47,7 +47,7 @@ module.exports = (overrides) => {
     slack: {
       reporter: require('logr-slack'),
       options: {
-        enabled: process.env.SLACK_HOOK !== undefined,
+        enabled: process.env.SLACK_HOOK ? true : false,
         slackHook: process.env.SLACK_HOOK,
         channel: process.env.SLACK_CHANNEL,
         username: process.env.SLACK_USERNAME ? process.env.SLACK_USERNAME : 'logr',
