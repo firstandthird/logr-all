@@ -5,6 +5,12 @@ module.exports = (overrides) => {
   const enabledReporters = (process.env.LOGR) ? process.env.LOGR.split(',') : ['logfmt'];
   const color = process.env.LOGR_COLOR ? true : false;
   const reporters = {
+    json: {
+      reporter: require('logr-json'),
+      options: {
+        enabled: enabledReporters.includes('json')
+      }
+    },
     logfmt: {
       reporter: require('logr-logfmt'),
       options: {
