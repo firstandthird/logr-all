@@ -1,7 +1,7 @@
 {
   "name": "logr-all",
   "description": "library for all logr reporters",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "homepage": "https://github.com/firstandthird/logr-all",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "aug": "^2.0.1",
-    "logr": "^2.15.0",
+    "logr": "^2.15.2",
     "logr-console-color": "^1.4.0",
     "logr-flat": "^3.2.2",
     "logr-json": "^0.1.0",
