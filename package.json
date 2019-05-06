@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "aug": "^2.0.1",
-    "logr": "^2.15.2",
+    "logr": "^2.16.0",
     "logr-console-color": "^1.4.0",
     "logr-flat": "^3.2.2",
     "logr-json": "^0.1.0",
@@ -24,10 +24,10 @@
     "logr-slack": "^1.2.0"
   },
   "devDependencies": {
-    "eslint": "3.16.1",
-    "eslint-config-firstandthird": "3.3.0",
-    "eslint-plugin-import": "2.2.0",
-    "tap": "^12.0.1"
+    "eslint": "^5.16.0",
+    "eslint-config-firstandthird": "^4.3.0",
+    "eslint-plugin-import": "^2.17.2",
+    "tap": "^13.1.2"
   },
   "keywords": [
     "logr",
