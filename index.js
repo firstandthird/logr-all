@@ -40,16 +40,6 @@ module.exports = (overrides) => {
         enabled: enabledReporters.includes('console')
       }
     },
-    sentry: {
-      reporter: require('logr-sentry'),
-      options: {
-        environment: process.env.NODE_ENV || 'development',
-        enabled: process.env.SENTRY_DSN ? true : false,
-        dsn: process.env.SENTRY_DSN,
-        logger: process.env.SENTRY_LOGGER ? process.env.SENTRY_LOGGER : 'logr',
-        filter: process.env.LOGR_SENTRY_FILTER ? process.env.LOGR_SENTRY_FILTER.split(',') : ['error']
-      }
-    },
     slack: {
       reporter: require('logr-slack'),
       options: {

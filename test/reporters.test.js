@@ -46,23 +46,6 @@ test('reporter - use env var to enable bell', (t) => {
   delete process.env.LOGR;
 });
 
-test('SENTRY_DSN and LOGR_SENTRY_FILTER', (t) => {
-  process.env.SENTRY_DSN = 'https://key@localhost:8080/dummy';
-  process.env.LOGR_SENTRY_FILTER = 'debug,error,info';
-  const logs = [];
-  const log = logrAll({
-    environment: 'test',
-    logger: 'logr-test',
-    logger(msg) {
-      logs.push(msg);
-    },
-  });
-  log(['debug'], { value: 'hi' });
-  t.end();
-  delete process.env.SENTRY_DSN;
-  delete process.env.LOGR_SENTRY_FILTER;
-});
-
 test('SLACK_HOOK', (t) => {
   process.env.SLACK_HOOK = 'https://key@localhost:8080/dummy';
   process.env.LOGR_SLACK_FILTER = 'debug,error,info';
