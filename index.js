@@ -1,7 +1,7 @@
 const Logr = require('logr');
 const aug = require('aug');
 
-module.exports = (overrides) => {
+module.exports = (overrides = {}) => {
   const enabledReporters = (process.env.LOGR) ? process.env.LOGR.split(',') : ['logfmt'];
   const color = process.env.LOGR_COLOR;
   const reporters = {
