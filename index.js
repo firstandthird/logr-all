@@ -1,9 +1,9 @@
 const Logr = require('logr');
 const aug = require('aug');
 
-module.exports = (overrides) => {
+module.exports = (overrides = {}) => {
   const enabledReporters = (process.env.LOGR) ? process.env.LOGR.split(',') : ['logfmt'];
-  const color = process.env.LOGR_COLOR ? true : false;
+  const color = process.env.LOGR_COLOR;
   const reporters = {
     json: {
       reporter: require('logr-json'),
@@ -43,7 +43,7 @@ module.exports = (overrides) => {
     slack: {
       reporter: require('logr-slack'),
       options: {
-        enabled: process.env.SLACK_HOOK ? true : false,
+        enabled: process.env.SLACK_HOOK,
         slackHook: process.env.SLACK_HOOK,
         channel: process.env.SLACK_CHANNEL,
         username: process.env.SLACK_USERNAME ? process.env.SLACK_USERNAME : 'logr',
@@ -58,4 +58,4 @@ module.exports = (overrides) => {
 
   const options = aug(defaults, overrides);
   return Logr.createLogger(options);
-}
+};
