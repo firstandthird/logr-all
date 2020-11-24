@@ -9,8 +9,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "tap test --cov -R spec",
-    "cov": "tap test/*.test.js --cov --coverage-report=lcov"
+    "test": "tap"
   },
   "dependencies": {
     "aug": "^4.0.0",
@@ -19,11 +18,11 @@
     "logr-flat": "^4.0.0",
     "logr-json": "^2.0.0",
     "logr-logfmt": "^2.0.0",
-    "logr-reporter-bell": "0.0.1",
+    "logr-reporter-bell": "^2.0.0",
     "logr-slack": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.13.0",
+    "eslint": "^7.14.0",
     "eslint-config-firstandthird": "^6.0.2",
     "eslint-plugin-import": "^2.17.3",
     "tap": "^14.11.0"
