@@ -32,5 +32,6 @@
     "log",
     "debug",
     "logger"
-  ]
+  ],
+  "license": "MIT"
 }
